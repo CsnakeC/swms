@@ -1,0 +1,5 @@
+# lisgd requires /dev/input/touchscreen
+ACTION=="add|change", SUBSYSTEM=="input", KERNEL=="event[0-9]*", ENV{ID_INPUT_TOUCHSCREEN}=="1", MODE:="0666", SYMLINK+="input/touchscreen"
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT}=="1", SUBSYSTEMS=="input", ATTRS{name}=="spmi_haptics", TAG+="uaccess", ENV{FEEDBACKD_TYPE}="vibra"
+
+#ACTION=="add|change", SUBSYSTEM=="input", KERNEL=="event[0-9]*", ATTRS{name}=="Synaptics S3706B", ENV{LIBINPUT_IGNORE_DEVICE}="1"
