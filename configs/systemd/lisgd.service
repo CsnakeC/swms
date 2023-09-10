@@ -1,0 +1,10 @@
+[Unit]
+Description=LisgdStart Service
+
+[Service]
+ExecStartPre=/bin/sleep 3
+ExecStart=/home/snake/.local/bin/swsm/lisgdstart
+KillMode=process
+
+[Install]
+WantedBy=default.target
